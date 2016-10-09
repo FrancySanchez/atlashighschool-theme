@@ -1,3 +1,71 @@
-<pre>
-	{{ dump(acfs) }}
-</pre>
+ {# <pre>{{dump(acfs)}}</pre>  #} 
+
+<div class="p-school__section">
+<div class="c-main-attributes">
+      <div class="row">
+        	<div class="col-md-4">
+              <i class="fa fa-university fa-2x"></i>
+              <p class="">{{acfs.school_type}}</p>
+          	</div>
+          	<div class="col-md-4">
+              <i class="fa fa-calendar fa-2x"></i>
+              <p class="">{{acfs.duration}}</p>
+          	</div>
+          	<div class="col-md-4">
+              <i class="fa fa-eur fa-2x"></i>
+              <p class="">{{acfs.price_range}}</p>
+          	</div>
+      </div>
+      <div class="row">
+        	<div class="col-md-4">
+              <i class="fa fa-bed fa-2x"></i>
+              <p class="">{{acfs.accommodation}}</p>
+          	</div>
+          	<div class="col-md-4">
+              <i class="fa fa-users fa-2x"></i>
+              <p class="">{{acfs.population}}</p>
+          	</div>
+      </div>
+      <div class="row">
+        	<div class="col-md-4">
+              <i class="fa fa-male fa-2x"></i>
+              <p class="">{{acfs.gender}}</p>
+          	</div>
+          	<div class="col-md-4">
+              <i class="fa fa-book fa-2x"></i>
+              <p class="">{{acfs.focus}}</p>
+          	</div>
+      </div>
+</div>
+</div>
+
+<div class="p-school__section">
+	<p>{{acfs.general_description}}</p>
+</div>
+
+
+<div class="p-school__section">
+	<div class="col-md-12">
+	 {% for item in acfs.photos %}
+	 	 {# <pre>{{dump(item)}} </pre>	 #}
+		<img class="" src="{{item.url}}" width="200px">
+	{% endfor %} 
+	</div>
+</div>
+
+<ul class="p-school__section">
+	{% for item in acfs.main_features %}
+		<li>{{item.feature}}</li>
+	{% endfor %} 
+</ul>
+
+<div class="p-school__section">
+	<h2>Location</h2>
+	{{acfs.location}}  
+</div>
+
+
+<div class="school_fees"> 
+	<h2>Fees</h2>	
+		{{acfs.fees}} 
+</div>
