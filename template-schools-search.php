@@ -9,15 +9,9 @@ $args = array(
 	'post_type' => 'schools',
 );
 $data['schools'] = Timber::get_posts($args);
+$data['acfs'] = get_fields();
 
-// foreach ($data['schools'] as $key => $school) {
-	
-	
-// 	$school['imagen'] = new TimberImage($schoolID);
-// };
-
-
-
+Timber::render('twigs/panel-builder.twig', $data);
 Timber::render('twigs/schools-search.twig', $data);
 
 ?>
