@@ -1,0 +1,20 @@
+{# <pre>
+{{dump(schools)}}
+</pre> #}
+<div class="container">
+	<div class="row">
+		{% for school in schools %}
+			<div class="col-md-4 c-school-card school-card-{{ school.ID}}">
+			    <img src="" alt="" class="">
+			    <h3>{{school.post_title}}</h3>
+			    {{ school.background_school}}
+			    {{ school.school_type}}
+			    {{ school.accommodation}}
+			    {{ school.gender}}
+			    {{ school.duration}}
+			    {{ school.focus}}
+			    {{ school.price_range}}
+		    </div>
+		{% endfor %}
+	</div>
+</div>
