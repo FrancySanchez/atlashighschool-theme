@@ -1,0 +1,55 @@
+.c-section-hero {
+    text-align: center;
+    background-size: cover;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+    background-position: center;
+
+}
+
+.panel{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+
+.c-section-content__text{
+    font-size: 1em;
+    font-weight: 300;
+    text-align: left;
+    width: 80%;
+    
+}
+
+
+
+//TEAM
+
+.c-section-team{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
+.team_img{
+    height: 130px;
+    width: 130px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+    text-align: center;
+}
+.team_name{
+    color: #b8071f;
+    font-size: 24px;
+    font-weight: bold;
+}
+.team_position{
+    color: #222222;
+    font-size: 18px;
+}
+

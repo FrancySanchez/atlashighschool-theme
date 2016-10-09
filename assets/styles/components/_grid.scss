@@ -1,6 +1,7 @@
 // Grid system
 .main {
   @include make-col-ready();
+  padding: 0;
   @include media-breakpoint-up(sm) {
     @include make-col($main-sm-columns);
     .sidebar-primary & {

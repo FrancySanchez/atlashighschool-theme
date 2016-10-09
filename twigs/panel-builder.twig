@@ -1,0 +1,32 @@
+{% for panel in acfs.panels %}
+	{# <pre>{{dump(i)}}</pre> #}
+
+	{% if panel.acf_fc_layout == 'hero' %}
+	<!-- SECTION MAIN WHY ATLAS ON -->
+	<div class="c-section-hero" style="background-image: url({{panel.background_image.url}})" id="whyatlas">
+	     <div class="container">
+	      	<div class="row">
+	      		<h1 class="c-big-title" >{{panel.title}}</h1>
+	      	</div>
+	      </div>
+	  </div>
+	<!-- SECTION MAIN OFF-->
+	{% endif %}
+
+	{% if panel.acf_fc_layout == 'text' %}
+	  	<div class= "panel">
+			<div class="container">
+				<h2 class="c-subtitle"> {{panel.title}}</h2>
+				<div class="row">
+					{% for col in panel.columns %}
+				<div class="col-xs">
+					{{col.content}}
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+	{% endif %}
+
+
+{% endfor %}
