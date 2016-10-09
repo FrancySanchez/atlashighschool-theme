@@ -10,11 +10,11 @@ $args = array(
 );
 $data['schools'] = Timber::get_posts($args);
 
-foreach ($data['schools'] as $key => $school) {
+// foreach ($data['schools'] as $key => $school) {
 	
 	
-	$school['imagen'] = new TimberImage($schoolID);
-};
+// 	$school['imagen'] = new TimberImage($schoolID);
+// };
 
 
 
