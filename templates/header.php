@@ -4,7 +4,9 @@
             <?php dynamic_sidebar('sidebar-toprail'); ?>
           </nav>   
           <div class="toprail-links">
-            <a href="<?php echo get_site_url();?>/contact-us" class="top-rail-links">Contact</a>
+            <a href="#" class="top-rail-links">Contact</a>
+            <a href="#" class="top-rail-links">Blog</a>
+            <a href="http://atlaslanguageschool.com/" class="top-rail-links" target="blank">Atlas Language School</a>
           </div>
           <nav class="icons">
             <a href="https://www.facebook.com/atlas.language.school?fref=ts" target="blank">
@@ -25,8 +27,8 @@
           </nav>
         
       </div>
-
   </div>
+
 <header class="banner">
   <div class="container">
      <div class="c-navbar">

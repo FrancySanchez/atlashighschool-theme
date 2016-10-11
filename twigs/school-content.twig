@@ -1,39 +1,47 @@
- {# <pre>{{dump(acfs)}}</pre>  #} 
-
+{#  <pre>{{dump(acfs)}}</pre>  #}
 <div class="p-school__section">
 <div class="c-main-attributes">
       <div class="row">
         	<div class="col-md-4">
-              <i class="fa fa-university fa-2x"></i>
-              <p class="">{{acfs.school_type}}</p>
+              <i class="c-attribute-icons fa fa-university fa-2x"></i>
+              <p class="c-attributes-text">{{acfs.school_type}}</p>
           	</div>
           	<div class="col-md-4">
-              <i class="fa fa-calendar fa-2x"></i>
-              <p class="">{{acfs.duration}}</p>
+              <i class="c-attribute-icons fa fa-calendar fa-2x"></i>
+              <p class="c-attributes-text">{{acfs.duration}}</p>
           	</div>
           	<div class="col-md-4">
-              <i class="fa fa-eur fa-2x"></i>
-              <p class="">{{acfs.price_range}}</p>
+              <i class="c-attribute-icons fa fa-eur fa-2x"></i>
+              <p class="c-attributes-text">{{acfs.price_range}}</p>
           	</div>
       </div>
       <div class="row">
         	<div class="col-md-4">
-              <i class="fa fa-bed fa-2x"></i>
-              <p class="">{{acfs.accommodation}}</p>
+              <i class="c-attribute-icons fa fa-bed fa-2x"></i>
+              <p class="c-attributes-text">{{acfs.accommodation}}</p>
           	</div>
           	<div class="col-md-4">
-              <i class="fa fa-users fa-2x"></i>
-              <p class="">{{acfs.population}}</p>
+              <i class="c-attribute-icons fa fa-users fa-2x"></i>
+              <p class="c-attributes-text">{{acfs.population}}</p>
           	</div>
       </div>
       <div class="row">
         	<div class="col-md-4">
-              <i class="fa fa-male fa-2x"></i>
-              <p class="">{{acfs.gender}}</p>
+              {% if acfs.gender == "Only Boys" %}
+                <i class="c-attribute-icons fa fa-male fa-2x"></i>
+              {% endif %}
+                {% if acfs.gender == "Only Girls" %}
+                <i class=" c-attribute-icons fa fa-female fa-2x"></i>
+              {% endif %}
+              {% if acfs.gender == "Mixed" %}
+                <i class="c-attribute-icons fa fa-male fa-2x"></i>
+                <i class="c-attribute-icons fa fa-female fa-2x"></i>
+              {% endif %}
+              <p class="c-attributes-text">{{acfs.gender}}</p>
           	</div>
           	<div class="col-md-4">
-              <i class="fa fa-book fa-2x"></i>
-              <p class="">{{acfs.focus}}</p>
+              <i class="c-attribute-icons fa fa-book fa-2x"></i>
+              <p class="c-attributes-text">{{acfs.focus}}</p>
           	</div>
       </div>
 </div>
@@ -60,12 +68,31 @@
 </ul>
 
 <div class="p-school__section">
-	<h2>Location</h2>
-	{{acfs.location}}  
+	<h2 class="c-subtitle">Location</h2>
+	     {{acfs.location}} 
 </div>
 
 
-<div class="school_fees"> 
-	<h2>Fees</h2>	
+<div class="p-school__section"> 
+	<h2 class="c-subtitle">Fees</h2>	
 		{{acfs.fees}} 
 </div>
+
+
+<div class="p-school__section"> 
+  <div class="row">
+    <div class="col-md-6" >
+       <a href="#" class="btn btn-primary btn-justified" title="Contact us today"> CONTACT US TODAY!</a>
+    </div>
+    <div class="col-md-6" >
+       <a href="#" class="btn btn-primary btn-justified" title="Register">WANT TO REGISTER? CLICK HERE</a>
+    </div>
+
+  </div>
+ 
+  
+</div>
+
+
+
+

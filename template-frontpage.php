@@ -16,7 +16,7 @@
         <div class="col-md-12">
               <h1 class="c-section-main__title"><?php the_field('hero_title') ?></h1>
               <p class="c-section-main__text"> <?php the_field('hero_subtitle') ?></p>
-              <a href="#find-highschool" class="btn btn-primary btn-justified" title="Find a great High School"><?php the_field('hero_button_text') ?></a>
+              <a href="high-school" class="btn btn-primary btn-justified" title="Find a great High School"><?php the_field('hero_button_text') ?></a>
           </div>
       </div>
       </div>
@@ -48,13 +48,15 @@
 
 <!-- SECTION 2 Top High School ON -->
 <div class="c-section-highschool c-text" id="highschool">
-    <div class="row">
+    <div class="container">
+      <div class="row">
           <div class="col-md-12 ">
               <h1 class="c-section-highschool__title"><?php the_field('top_high_school_title')?></h1>
               <p class="c-section-highschool__text"><?php the_field('top_high_school_text')?></p>
-              <a href="#see-partner" class="btn btn-primary btn-justified" title="See our partner high School"><?php the_field('top_high_school_button_text')?></a>
+              <a href="high-school" class="btn btn-primary btn-justified" title="See our partner high School"><?php the_field('top_high_school_button_text')?></a>
           </div>
-      </div>
+        </div>
+    </div>
       <div class="container">
         <div class="row container__img">
           <div class="col-md-4 ">
@@ -79,8 +81,11 @@
             <p class="c-section-brochure__text"><?php the_field('brochure_part_left_text')?></p>
        </div>
        <div class="col-md-6">
-            <h1 class="c-section-brochure__title"><?php the_field('brochure_part_right_title')?></h1>
-            <p class="c-section-brochure__text"> Form</p>
+            <h1 class="c-section-brochure__title"><?php the_field('brochure_part_right_title')?>
+            </h1>
+            <div class="c-section-brochure__text"> 
+                <?php the_field('brochure_form')?> 
+            </div>
        </div>
     </div>
 </div>
@@ -95,9 +100,12 @@
 
 
 <!-- SECTION 5 Accreditations ON -->
-<div class="c-section-accreditations c-text container" id="accreditations">
-     <h1 class="c-section-accreditations__title">Accreditations</h1>
-
+<div class="container" id="accreditations">
+        <div class="row">
+          <div class="col-md-12 ">
+             <img class="c-section-accreditations" src=" <?php the_field('accreditations_1') ?>"> 
+          </div>
+        </div>
 </div>
 <!-- SECTION 4 OFF-->
 

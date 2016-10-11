@@ -1,20 +1,29 @@
-{# <pre>
-{{dump(schools)}}
-</pre> #}
+{# <pre> {{dump(schools)}} </pre> #}
 <div class="container">
 	<div class="row">
 		{% for school in schools %}
-			<div class="col-md-4 c-school-card school-card-{{ school.ID}}">
-			    <img src="" alt="" class="">
-			    <h3>{{school.post_title}}</h3>
-			    {{ school.background_school}}
-			    {{ school.school_type}}
-			    {{ school.accommodation}}
-			    {{ school.gender}}
-			    {{ school.duration}}
-			    {{ school.focus}}
-			    {{ school.price_range}}
+			<div class="col-md-3 {{ school.ID}}">
+				<div class="card">
+			    <img class= " c-card-head card-img-top" src="" alt="Card image cap" >{{ school.background_school}}
+			    <div class="card-block">
+			    	<h3 class="c-card-title">{{school.post_title}}</h3>
+				</div>
+				<ul class="list-group list-group-flush">
+			    	<li class=""> School type: {{ school.school_type}}</li>
+			    	<li class="">Accommodation: {{ school.accommodation}}</li>
+			    	<li class="">Gender: {{ school.gender}}</li>
+			    	<li class="">Duration: {{ school.duration}}</li>
+			    	<li class="">School Population: {{ school.population}}</li>
+			    	<li class="">Focus: {{ school.focus}}</li>
+			    	<li class="">Price Range: {{ school.price_range}}</li>
+			    </ul>
+			    <div class="c-card__footer">
+   					 <a href="#" class="card-link">View School</a>
+  				</div>
+  			</div>
 		    </div>
 		{% endfor %}
 	</div>
 </div>
+
+

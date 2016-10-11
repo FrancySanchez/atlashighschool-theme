@@ -20,6 +20,11 @@
     float: right;
     margin-left: 10px;
 }
+
+.top-rail-links:hover, .top-rail .icons a:hover {
+    background: #fff;
+    color: #cf142b;
+}
 //------------------Baner red off-----------------------------
 // -----------------Social media------------------------------
 .icons i {
@@ -62,8 +67,6 @@
         }
     }
 }
-
-
 .c-enquire{
     background-color: #b8071f;
     border: 1px solid #b8071f;
@@ -72,4 +75,12 @@
     font-size: 12px;
     text-align: center;
     padding: 20px 50px 10px 50px;
+}
+///SCHOOL HEADER-----------------------------------------------------------
+.c-school-head{
+    margin-bottom:50px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column; 
 }

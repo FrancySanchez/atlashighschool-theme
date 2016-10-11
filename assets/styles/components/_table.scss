@@ -1,15 +1,28 @@
-
-table, th, td {
-     border-bottom: 1px solid #ddd;
-     padding: 5px;
-     text-align: center;
+table{
+	width: 100%;
 }
 
-th {
+table td{
+     border: 1px solid #ddd;
+     text-align: center;
+     padding: 1.75rem;
+}
+
+td{
+	padding:5px;
+	vertical-align: middle;
+}
+
+
+table th {
+	border: 1px solid #ddd;
     background-color: #d9edf7;
     color: #b8071f;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
 }
 
-tr:nth-child(even) {background-color: #f9f9f9}
+tr:nth-child(even) {background-color: #f6f6f6}
 
 tr:hover {background-color: #FCC5BA}
