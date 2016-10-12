@@ -1,19 +1,23 @@
 .c-big-title{
     font-family: "Anton";
-    font-size: 52px;
+    font-size: 58px;
     font-weight: 300;
-    text-align: left;
-    //width: 80%;
+    text-align: center;
+    margin: 0 auto 1.2rem;
     color: #b8071f;
+    //border-bottom: 4px solid #fff;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 .c-subtitle{
-    font-family: "Anton";
+    font-family: "Open Sans";
     font-size: 28px;
     font-weight: 300;
     text-align: left;
     width: 80%;
     color: #b8071f;
     margin-bottom : 40px;
+    font-weight: bold;
 }
 
 .c-title{
