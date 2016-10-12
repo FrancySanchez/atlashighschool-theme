@@ -2,7 +2,9 @@
   "dependencies": {
     "main.js": {
       "files": [
-        "scripts/main.js"
+        "scripts/main.js",
+        // "scripts/app.js",
+        "scripts/navbar-top-fixed.js"
       ],
       "main": true
     },
