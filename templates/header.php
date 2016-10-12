@@ -27,7 +27,8 @@
       </div>
 
   </div>
-<header class="banner">
+<header class="banner js-nav-bar"  >
+
   <div class="container">
      <div class="c-navbar">
         <a class="brand" href="<?= esc_url(home_url('/')); ?>">

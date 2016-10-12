@@ -60,9 +60,12 @@ function asset_path($filename) {
 // Enqueueing Scripts
 function enqeueing_scripts(){
    
-    if (is_page_template('template-schools-search.php')) {
+    // if (is_page_template('template-schools-search.php')) {
         wp_enqueue_script('angularjs2', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js', array ( 'jquery' ), false, true);
-    }
+        wp_enqueue_script('angularjsRoute', '//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js', array ( 'jquery' ), false, true);
+
+
+    // }
 }
 add_action('wp_enqueue_scripts',  __NAMESPACE__ . '\\enqeueing_scripts');
 

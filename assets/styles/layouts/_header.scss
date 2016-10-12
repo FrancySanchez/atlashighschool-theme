@@ -1,39 +1,45 @@
 //-----------------Baner red------------------------------------
-.top-rail{
+.top-rail {
     height: 33px;
     line-height: 33px;
     background: #cf142b;
     font-size: 1rem;
     margin-bottom: 20px;
 }
+
 .top-rail a {
     text-decoration: none;
     color: #fff;
 }
+
 .toprail-links {
     float: right;
 }
+
 .toprail-links a {
     padding: 10px 20px;
 }
+
 .top-rail nav {
     float: right;
     margin-left: 10px;
 }
+
 //------------------Baner red off-----------------------------
 // -----------------Social media------------------------------
 .icons i {
     padding: 10px;
 }
+
 .fa {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
     font-size: inherit;
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
- }
-//-----------------------------------------------------------
+}
 
+//-----------------------------------------------------------
 .inner {
     max-width: 1140px;
     width: 100%;
@@ -41,30 +47,34 @@
     margin-right: auto;
 }
 
-.c-navbar{
+.c-navbar {
     display: flex;
     justify-content: space-between;
     width: 100%;
-
-    &__menu{
+    &__menu {
         display: flex;
         list-style: none;
-
-        li{
+        li {
             padding: 1rem;
-            a{
+            a {
                 color: #777;
                 font-size: 14px;
             }
-            a:hover{
+            a:hover {
                 color: #b8071f;
             }
         }
     }
+    &--fixed-top {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: white;
+        z-index: 20000000;
+    }
 }
 
-
-.c-enquire{
+.c-enquire {
     background-color: #b8071f;
     border: 1px solid #b8071f;
     float: right;

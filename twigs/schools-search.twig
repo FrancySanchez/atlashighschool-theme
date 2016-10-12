@@ -1,8 +1,10 @@
 {# <pre>
 {{dump(schools)}}
 </pre> #}
-<div class="container">
-	<div class="row">
+<div class="container" ng-init="thisIsTrue=false">
+
+	<a class="button" ng-click="thisIsTrue=!thisIsTrue">Click here</a>
+	<div class="row" ng-class="{'hide' : thisIsTrue == true }">
 		{% for school in schools %}
 			<div class="col-md-4 c-school-card school-card-{{ school.ID}}">
 			    <img src="" alt="" class="">
