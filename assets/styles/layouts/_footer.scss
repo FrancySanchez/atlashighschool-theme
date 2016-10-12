@@ -42,5 +42,29 @@
     padding: 10px 20px;
 }
 
+.nav-footer ul{
+    padding: 0px;
+}
+.nav-footer .widget{
+    margin:0px;
+}
+
+.nav-footer li{
+    list-style: none;
+    padding:5px;
+    margin: 0px;
+    a{
+    color: #c1c1c1;
+    }
+    a:hover{
+    color: #b8071f;
+    text-decoration: none;
+    }
+}
+
+
+
+
+
 
 

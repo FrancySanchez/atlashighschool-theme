@@ -9,16 +9,16 @@
 			    	<h3 class="c-card-title">{{school.post_title}}</h3>
 				</div>
 				<ul class="list-group list-group-flush">
-			    	<li class=""> School type: {{ school.school_type}}</li>
-			    	<li class="">Accommodation: {{ school.accommodation}}</li>
-			    	<li class="">Gender: {{ school.gender}}</li>
-			    	<li class="">Duration: {{ school.duration}}</li>
-			    	<li class="">School Population: {{ school.population}}</li>
-			    	<li class="">Focus: {{ school.focus}}</li>
-			    	<li class="">Price Range: {{ school.price_range}}</li>
+			    	<li class=""> <span class="c-important">School type:</span> {{ school.school_type}}</li>
+			    	<li class=""><span class="c-important">Accommodation:</span> {{ school.accommodation}}</li>
+			    	<li class=""><span class="c-important">Gender:</span> {{ school.gender}}</li>
+			    	<li class=""><span class="c-important">Duration:</span> {{ school.duration}}</li>
+			    	<li class=""><span class="c-important">School Population:</span> {{ school.population}}</li>
+			    	<li class=""><span class="c-important">Focus:</span> {{ school.focus}}</li>
+			    	<li class=""><span class="c-important">Price Range:</span> {{ school.price_range}}</li>
 			    </ul>
 			    <div class="c-card__footer">
-   					 <a href="#" class="card-link">View School</a>
+   					 <a href="{{school.guid}}" class="card-link">View School</a>
   				</div>
   			</div>
 		    </div>

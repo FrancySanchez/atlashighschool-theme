@@ -3,12 +3,12 @@
     font-size: 52px;
     font-weight: 300;
     text-align: left;
-    width: 80%;
+    //width: 80%;
     color: #b8071f;
 }
 .c-subtitle{
     font-family: "Anton";
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 300;
     text-align: left;
     width: 80%;
@@ -19,4 +19,17 @@
 .c-title{
     font-size: 20px;
     margin-bottom: 20px;
+    
+}
+
+.c-title-color{
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #b8071f;
+}
+
+.c-important{
+    color: #3e3d3d;
+    font-weight: bold;
+
 }

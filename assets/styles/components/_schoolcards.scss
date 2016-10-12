@@ -1,5 +1,6 @@
 .card {
     margin-bottom: 2.75rem;
+    background-color:#f6f6f6;
 }
 
 .c-card-head{
@@ -35,12 +36,17 @@
 }
 
 .list-group {
-    padding-left: 40px;
+    padding-left: 15px;
     margin-bottom: 0;
     font-size: 14px;
 }
+.list-group li{
+    list-style: none;
+    padding:5px;
+    margin: 0px;
+}
 
-.c-card__footer {
+.c-card__footer{ 
     border: 0;
     padding: 16px;
     padding: 1rem;

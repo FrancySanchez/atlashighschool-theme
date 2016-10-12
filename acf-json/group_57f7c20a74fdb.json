@@ -8,7 +8,7 @@
             "name": "background_school",
             "type": "image",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -127,8 +127,8 @@
             "key": "field_57f92be731210",
             "label": "population",
             "name": "population",
-            "type": "number",
-            "instructions": "Population the student in the school",
+            "type": "text",
+            "instructions": "Population the student in the school. Write number + students (exp: 500 students)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -140,9 +140,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "min": "",
-            "max": "",
-            "step": ""
+            "maxlength": ""
         },
         {
             "key": "field_57fa6827d49ef",
@@ -177,8 +175,9 @@
                 "id": ""
             },
             "choices": {
-                "4000-12000": "4000\u20ac - 12000\u20ac",
-                "12000-16000": "12000\u20ac - 16000\u20ac"
+                "4000\u20ac-12000\u20ac": "4000 \u20ac - 12000 \u20ac",
+                "12000\u20ac-16000\u20ac": "12000 \u20ac - 16000 \u20ac",
+                "N\/a: N\/A": "N\/a: N\/A"
             },
             "default_value": [],
             "allow_null": 0,
@@ -326,5 +325,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1476110479
+    "modified": 1476291571
 }

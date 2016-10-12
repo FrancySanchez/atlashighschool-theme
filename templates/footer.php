@@ -1,18 +1,32 @@
 <footer class="c-section-footer">
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-          <p>Atlas Language School
-            <br> Portobello House,
-            <br> Portobello,<br> Dublin 2,<br> Ireland.
-          </p>
-          <p>(+353 1) 4782845<br> enquiries@atlaslanguageschool.com</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+          <div class="nav-footer"> 
+            <?php dynamic_sidebar('sidebar-footer'); ?>
+            <!-- <a href="Enquire" class="btn buttom-footer btn-justified" title="Contact">Enquire Now!</a> -->
+          </div>
       </div>
-	 </div>
-   </div>
-<div class="container">
-        <?php dynamic_sidebar('sidebar-footer'); ?>
-</div>
+      <div class="col-md-3">
+          <p style="color:#c1c1c1"><span class="c-title-color">Contact us</span> 
+            <br>Atlas Language School
+            <br> Portobello House, Portobello,
+            <br> Dublin 2,<br> Ireland.
+            <br>(+353 1) 4782845<br> enquiries@atlaslanguageschool.com</p>
+            <!-- <a href="contact" class="btn buttom-footer btn-justified" title="Contact">Contact us!</a> -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+          <div class="nav-footer"> 
+            <a href="Enquire" class="btn buttom-footer btn-justified" title="Contact">Enquire Now!</a>
+          </div>
+      </div>
+      <div class="col-md-3">
+            <a href="contact" class="btn buttom-footer btn-justified" title="Contact">Contact us!</a>
+      </div>
+    </div>
+	</div>
 </footer>
 <div class="footerend">
   <div class="inner">

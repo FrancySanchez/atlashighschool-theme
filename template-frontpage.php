@@ -93,20 +93,21 @@
 
 <!-- SECTION 4 Galery ON -->
 <div class="c-section-galery c-text container" id="galery">
-     <h1 class="c-section-galery__title">GALERY</h1>
-
-</div>
+     </div>
 <!-- SECTION 4 OFF-->
+
 
 
 <!-- SECTION 5 Accreditations ON -->
-<div class="container" id="accreditations">
-        <div class="row">
+<div class="c-section-accreditations">
+  <div class="container" id="accreditations">
+      <div class="row">
           <div class="col-md-12 ">
-             <img class="c-section-accreditations" src=" <?php the_field('accreditations_1') ?>"> 
+             <img class="" src=" <?php the_field('accreditations_1') ?>"> 
           </div>
-        </div>
+      </div>
+  </div>
 </div>
-<!-- SECTION 4 OFF-->
+<!-- SECTION 5 OFF-->
 
 <?php endwhile; ?>

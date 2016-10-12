@@ -4,8 +4,7 @@
             <?php dynamic_sidebar('sidebar-toprail'); ?>
           </nav>   
           <div class="toprail-links">
-            <a href="#" class="top-rail-links">Contact</a>
-            <a href="#" class="top-rail-links">Blog</a>
+            <a href="http://localhost:8888/Highschool/contact/" class="top-rail-links">Contact</a>
             <a href="http://atlaslanguageschool.com/" class="top-rail-links" target="blank">Atlas Language School</a>
           </div>
           <nav class="icons">
@@ -42,7 +41,7 @@
                           'menu_class'      => 'c-navbar__menu',]);
             endif;?>  
         </nav>
-        <a href="#enquire" class="btn btn-primary btn-justified c-enquire" title="Enquire now"> ENQUIRE NOW</a>
+        <a href="http://localhost:8888/Highschool/enquire/" class="btn btn-primary btn-justified c-enquire" title="Enquire now"> ENQUIRE NOW</a>
     </div>
   </div>
 </header>

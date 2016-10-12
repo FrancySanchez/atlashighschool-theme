@@ -6,7 +6,7 @@
     font-size: 1rem;
     margin-bottom: 20px;
 }
-.top-rail a {
+.top-rail a{
     text-decoration: none;
     color: #fff;
 }
@@ -24,11 +24,12 @@
 .top-rail-links:hover, .top-rail .icons a:hover {
     background: #fff;
     color: #cf142b;
+    //padding: 10px 10px;
 }
 //------------------Baner red off-----------------------------
 // -----------------Social media------------------------------
 .icons i {
-    padding: 10px;
+    padding: 10px 20px;
 }
 .fa {
     display: inline-block;
@@ -63,6 +64,7 @@
             }
             a:hover{
                 color: #b8071f;
+                text-decoration: none;
             }
         }
     }
@@ -76,6 +78,8 @@
     text-align: center;
     padding: 20px 50px 10px 50px;
 }
+
+
 ///SCHOOL HEADER-----------------------------------------------------------
 .c-school-head{
     margin-bottom:50px;

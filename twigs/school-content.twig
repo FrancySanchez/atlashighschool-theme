@@ -1,32 +1,40 @@
-{#  <pre>{{dump(acfs)}}</pre>  #}
+ {# <pre>{{dump()}}</pre>  #}
+<div>
+  <h1 class="c-big-title">{{wp_title}}</h1>
+</div>
+
 <div class="p-school__section">
-<div class="c-main-attributes">
+  <div class="c-main-attributes">
       <div class="row">
-        	<div class="col-md-4">
-              <i class="c-attribute-icons fa fa-university fa-2x"></i>
-              <p class="c-attributes-text">{{acfs.school_type}}</p>
-          	</div>
-          	<div class="col-md-4">
-              <i class="c-attribute-icons fa fa-calendar fa-2x"></i>
+        	<div class="col-md-2">
+            <i class="c-attribute-icons fa fa-university fa-2x"></i>
+          </div>
+          <div class="col-md-4">
+            <p class="c-attributes-text">{{acfs.school_type}}</p>
+          </div>
+          <div class="col-md-2">
+            <i class="c-attribute-icons fa fa-calendar fa-2x"></i>
+          </div>
+          <div class="col-md-4">
               <p class="c-attributes-text">{{acfs.duration}}</p>
-          	</div>
-          	<div class="col-md-4">
-              <i class="c-attribute-icons fa fa-eur fa-2x"></i>
-              <p class="c-attributes-text">{{acfs.price_range}}</p>
-          	</div>
+          </div>
       </div>
       <div class="row">
-        	<div class="col-md-4">
+        	<div class="col-md-2">
               <i class="c-attribute-icons fa fa-bed fa-2x"></i>
-              <p class="c-attributes-text">{{acfs.accommodation}}</p>
-          	</div>
-          	<div class="col-md-4">
+          </div>
+          <div class="col-md-4"> 
+            <p class="c-attributes-text">{{acfs.accommodation}}</p>
+          </div>
+          <div class="col-md-2">
               <i class="c-attribute-icons fa fa-users fa-2x"></i>
+          </div>
+          <div class="col-md-4">
               <p class="c-attributes-text">{{acfs.population}}</p>
-          	</div>
+          </div>
       </div>
       <div class="row">
-        	<div class="col-md-4">
+        	<div class="col-md-2">
               {% if acfs.gender == "Only Boys" %}
                 <i class="c-attribute-icons fa fa-male fa-2x"></i>
               {% endif %}
@@ -37,15 +45,28 @@
                 <i class="c-attribute-icons fa fa-male fa-2x"></i>
                 <i class="c-attribute-icons fa fa-female fa-2x"></i>
               {% endif %}
+          </div>
+          <div class="col-md-4" >
               <p class="c-attributes-text">{{acfs.gender}}</p>
-          	</div>
-          	<div class="col-md-4">
+          </div>
+          <div class="col-md-2">
               <i class="c-attribute-icons fa fa-book fa-2x"></i>
+          </div>
+          <div class="col-md-4">    
               <p class="c-attributes-text">{{acfs.focus}}</p>
-          	</div>
+          </div>
       </div>
+      {# <div class="row">
+        <div class="col-md-2">
+              <i class="c-attribute-icons fa fa-eur fa-2x"></i>
+          </div>
+          <div class="col-md-4">
+              <p class="c-attributes-text">{{acfs.price_range}}</p>
+          </div>  
+      </div> #}
+  </div>
 </div>
-</div>
+
 
 <div class="p-school__section">
 	<p>{{acfs.general_description}}</p>
@@ -53,19 +74,21 @@
 
 
 <div class="p-school__section">
+  <ul class="c-group-ul" >
+   {% for item in acfs.main_features %}
+      <li>{{item.feature}}</li>
+   {% endfor %} 
+  </ul>
+</div>
+
+<div class="p-school__section">
 	<div class="col-md-12">
-	 {% for item in acfs.photos %}
-	 	 {# <pre>{{dump(item)}} </pre>	 #}
-		<img class="" src="{{item.url}}" width="200px">
-	{% endfor %} 
+	   {% for item in acfs.photos %}
+		    <img class="p-galery__img" src="{{item.url}}" width="200px">
+	   {% endfor %} 
 	</div>
 </div>
 
-<ul class="p-school__section">
-	{% for item in acfs.main_features %}
-		<li>{{item.feature}}</li>
-	{% endfor %} 
-</ul>
 
 <div class="p-school__section">
 	<h2 class="c-subtitle">Location</h2>
@@ -82,15 +105,13 @@
 <div class="p-school__section"> 
   <div class="row">
     <div class="col-md-6" >
-       <a href="#" class="btn btn-primary btn-justified" title="Contact us today"> CONTACT US TODAY!</a>
+       <a href="http://localhost:8888/Highschool/contact/" class="btn btn-primary btn-justified" title="Contact us today"> Contact us today!</a>
     </div>
     <div class="col-md-6" >
-       <a href="#" class="btn btn-primary btn-justified" title="Register">WANT TO REGISTER? CLICK HERE</a>
+       <a href="http://localhost:8888/Highschool/enquire/" class="btn btn-primary btn-justified" title="Register">Want to Register? Click Here</a>
     </div>
 
-  </div>
- 
-  
+  </div> 
 </div>
 
 
