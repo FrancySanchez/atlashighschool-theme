@@ -271,6 +271,24 @@
             "mime_types": ""
         },
         {
+            "key": "field_57f934658bec5",
+            "label": "Fees",
+            "name": "fees",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
             "key": "field_57f9343e8bec4",
             "label": "Location",
             "name": "location",
@@ -288,24 +306,6 @@
             "maxlength": "",
             "rows": "",
             "new_lines": "wpautop"
-        },
-        {
-            "key": "field_57f934658bec5",
-            "label": "Fees",
-            "name": "fees",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1
         }
     ],
     "location": [
@@ -325,5 +325,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1476291571
+    "modified": 1476351509
 }
