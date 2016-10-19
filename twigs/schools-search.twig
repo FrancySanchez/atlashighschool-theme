@@ -1,17 +1,21 @@
-
-{# <pre>
+{# 
+<pre>
 {{dump(schools)}}
 </pre> #}
-<div class="container" ng-init="thisIsTrue=false">
 
-	<a class="button" ng-click="thisIsTrue=!thisIsTrue">Click here</a>
+
+<div class="container" ng-init="thisIsTrue=false">
 	<div class="row" ng-class="{'hide' : thisIsTrue == true }">
 		{% for school in schools %}
 			<div class="col-md-3 {{ school.ID}}">
 				<div class="card">
-			    <img class= " c-card-head card-img-top" src="" alt="Card image cap" >{{ school.background_school}}
+			    <a href="{{school.link}}" class="card-link" title="View school">
+			    	<img class= " c-card-head card-img-top" src="{{ school.featured_image|resize(300, 200)}}" width="100%" alt="Card image cap" >
+			    </a>
 			    <div class="card-block">
-			    	<h3 class="c-card-title">{{school.post_title}}</h3>
+			    	<h3 class="c-card-title">
+			    		<a href="{{school.link}}" class="card-link" title="View school">{{school.post_title}}</a>
+			    	</h3>
 				</div>
 				<ul class="list-group list-group-flush">
 			    	<li class=""> <span class="c-important">School type:</span> {{ school.school_type}}</li>
@@ -23,7 +27,7 @@
 			    	<li class=""><span class="c-important">Price Range:</span> {{ school.price_range}}</li>
 			    </ul>
 			    <div class="c-card__footer">
-   					 <a href="{{school.guid}}" class="card-link">View School</a>
+   					 <a href="{{school.link}}" class="card-link" title="View school">View School</a>
   				</div>
   			</div>
 		    </div>
