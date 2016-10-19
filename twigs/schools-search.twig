@@ -4,10 +4,26 @@
 </pre> #}
 
 
-<div class="container" ng-init="thisIsTrue=false">
-	<div class="row" ng-class="{'hide' : thisIsTrue == true }">
+<div class="container">
+		<ul class="nav nav-pills js-school-filters">
+		  <li class="nav-item">
+		    <a class="nav-link " href="#" data-filter="js-type-private">Private</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#" data-filter="js-type-public">Public</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#" data-filter="js-accommodation-homestay">Homestay</a>
+		  </li>
+		  <li class="nav-item">
+		    <a class="nav-link" href="#" data-filter="js-accommodation-hostfamily">hostfamily</a>
+		  </li>
+		</ul>
+		<hr>	
+
+	<div class="row js-schools">
 		{% for school in schools %}
-			<div class="col-md-3 {{ school.ID}}">
+			<div class="col-md-3 {{ school.ID}} js-type-{{ school.school_type|replace(' ', '-')|lower}}">
 				<div class="card">
 			    <a href="{{school.link}}" class="card-link" title="View school">
 			    	<img class= " c-card-head card-img-top" src="{{ school.featured_image|resize(300, 200)}}" width="100%" alt="Card image cap" >

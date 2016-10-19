@@ -3,8 +3,8 @@
     "main.js": {
       "files": [
         "scripts/main.js",
-        // "scripts/app.js",
-        "scripts/navbar-top-fixed.js"
+        "scripts/navbar-top-fixed.js",
+        "scripts/school-filters.js"
       ],
       "main": true
     },
