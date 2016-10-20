@@ -2,6 +2,14 @@ var atlasApp = angular.module('atlasApp', [ 'ngRoute']);
 
 // angular.element('.c-navbar').addClass('yo');
 
+
+
+atlasApp.controller('filtersCtrl', ['$scope', function($scope){
+	$scope.filterSchools = function ($filter){
+		// alert('yo');
+	}
+}])
+
 // atlasApp.directive('myNavscroll', function($window) {
 //     return function(scope, element, attrs) {
 //         angular.element($window).bind("scroll", function() {

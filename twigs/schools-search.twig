@@ -1,54 +1,83 @@
-{# 
+{#
 <pre>
 {{dump(schools)}}
 </pre> #}
-
-
-<div class="container">
-		<ul class="nav nav-pills js-school-filters">
-		  <li class="nav-item">
-		    <a class="nav-link " href="#" data-filter="js-type-private">Private</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" href="#" data-filter="js-type-public">Public</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" href="#" data-filter="js-accommodation-homestay">Homestay</a>
-		  </li>
-		  <li class="nav-item">
-		    <a class="nav-link" href="#" data-filter="js-accommodation-hostfamily">hostfamily</a>
-		  </li>
-		</ul>
-		<hr>	
-
-	<div class="row js-schools">
-		{% for school in schools %}
-			<div class="col-md-3 {{ school.ID}} js-type-{{ school.school_type|replace(' ', '-')|lower}}">
-				<div class="card">
-			    <a href="{{school.link}}" class="card-link" title="View school">
-			    	<img class= " c-card-head card-img-top" src="{{ school.featured_image|resize(300, 200)}}" width="100%" alt="Card image cap" >
-			    </a>
-			    <div class="card-block">
-			    	<h3 class="c-card-title">
+<div class="container" ng-controller="filtersCtrl">
+    <div class="row js-school-filters">
+        <div class="col-xs">
+            School type
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' ng-init="" ng-click="filterSchools()">Public</a>
+                </li>
+                <li class="list-inline-item"> 
+                	<a class='btn btn-secondary btn-sm' >Private</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs">
+            Acommodation
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' >Homestay</a>
+                </li>
+                <li class="list-inline-item"> <a class='btn btn-secondary btn-sm' >Boarding School</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs">
+            Gender
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' >Only boys</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' >Only girls</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' >Mixed</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs">
+            Duration
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' >Year</a>
+                </li>
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' >Term</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row js-schools">
+        {% for school in schools %}
+        <div class="col-md-3 {{ school.ID}} js-type-{{ school.school_type|replace(' ', '-')|lower}}"  ng-hide="">
+            <div class="card">
+                <a href="{{school.link}}" class="card-link" title="View school">
+                    <img class=" c-card-head card-img-top" src="{{ school.featured_image|resize(300, 200)}}" width="100%" alt="Card image cap">
+                </a>
+                <div class="card-block">
+                    <h3 class="c-card-title">
 			    		<a href="{{school.link}}" class="card-link" title="View school">{{school.post_title}}</a>
 			    	</h3>
-				</div>
-				<ul class="list-group list-group-flush">
-			    	<li class=""> <span class="c-important">School type:</span> {{ school.school_type}}</li>
-			    	<li class=""><span class="c-important">Accommodation:</span> {{ school.accommodation}}</li>
-			    	<li class=""><span class="c-important">Gender:</span> {{ school.gender}}</li>
-			    	<li class=""><span class="c-important">Duration:</span> {{ school.duration}}</li>
-			    	<li class=""><span class="c-important">School Population:</span> {{ school.population}}</li>
-			    	<li class=""><span class="c-important">Focus:</span> {{ school.focus}}</li>
-			    	<li class=""><span class="c-important">Price Range:</span> {{ school.price_range}}</li>
-			    </ul>
-			    <div class="c-card__footer">
-   					 <a href="{{school.link}}" class="card-link" title="View school">View School</a>
-  				</div>
-  			</div>
-		    </div>
-		{% endfor %}
-	</div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class=""> <span class="c-important">School type:</span> {{ school.school_type}}</li>
+                    <li class=""><span class="c-important">Accommodation:</span> {{ school.accommodation}}</li>
+                    <li class=""><span class="c-important">Gender:</span> {{ school.gender}}</li>
+                    <li class=""><span class="c-important">Duration:</span> {{ school.duration}}</li>
+                    <li class=""><span class="c-important">School Population:</span> {{ school.population}}</li>
+                    <li class=""><span class="c-important">Focus:</span> {{ school.focus}}</li>
+                    <li class=""><span class="c-important">Price Range:</span> {{ school.price_range}}</li>
+                </ul>
+                <div class="c-card__footer">
+                    <a href="{{school.link}}" class="card-link" title="View school">View School</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-
-
