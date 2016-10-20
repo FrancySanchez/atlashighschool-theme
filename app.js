@@ -5,8 +5,9 @@ var atlasApp = angular.module('atlasApp', [ 'ngRoute']);
 
 
 atlasApp.controller('filtersCtrl', ['$scope', function($scope){
-	$scope.filterSchools = function ($filter){
-		// alert('yo');
+	
+	$scope.filterSchools = function (filter){
+		alert(filter);
 	}
 }])
 
