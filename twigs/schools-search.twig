@@ -4,17 +4,16 @@
 </pre> #}
 <div class="container" ng-controller="filtersCtrl">
     <div class="panel">
-      
     </div>
     <div class="row js-school-filters" ng-init="query = ''">
         <div class="col-xs">
             School type
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('The')">The</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults({type: 'Public'})">Public</a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('King')">King</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults({type: 'Private'})">Private</a>
                 </li>
             </ul>
         </div>
@@ -22,9 +21,10 @@
             Acommodation
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' ng-click="updateResults()">All</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults({accommodation : 'Homestay'})">Homestay</a>
                 </li>
-                <li class="list-inline-item"> <a class='btn btn-secondary btn-sm'>Boarding School</a>
+                <li class="list-inline-item"> 
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults({accommodation :'Boarding School'})">Boarding School</a>
                 </li>
             </ul>
         </div>
@@ -32,13 +32,16 @@
             Gender
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm'>Only boys</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('Private')">Only boys
+                    </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm'>Only girls</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('Only girls')">Only girls
+                    </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm'>Mixed</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('Mixed')">Mixed
+                    </a>
                 </li>
             </ul>
         </div>
@@ -46,27 +49,45 @@
             Duration
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm'>Year</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('Year')">Year
+                    </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm'>Term</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('Term')">Term
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
     <hr>
     <div class="row js-schools">
-        <div class="col-md-3" ng-repeat="post in posts | filter:query ">
+        <div class="col-md-3" ng-repeat="school in posts | filter:query ">
             <div class="card">
                 <div class="card-block">
                     <h3 class="c-card-title"> 
-                             <a href="{[school.link]}" class="card-link" title="View school">
-                                {[post.title.rendered]} 
-                                </a>
-                            </h3>
+                        <a href="{[school.link]}" class="card-link" title="View school">
+                            {[school.title.rendered]} 
+                        </a>
+                    </h3>
                 </div>
-                <div class="post-content">
-                    {[post.type]}
+                <ul class="list-group list-group-flush">
+                    <li class=""> 
+                        <span class="c-important">School type:</span> {[school.acf.school_type]}</li>
+                    <li class="">
+                        <span class="c-important">Accommodation:</span> {[school.acf.accommodation]}</li>
+                    <li class="">
+                        <span class="c-important">Gender:</span> {[school.acf.gender]}</li>
+                    <li class="">
+                        <span class="c-important">Duration:</span> {[school.acf.duration]}</li>
+                    <li class="">
+                        <span class="c-important">School Population:</span> {[school.acf.population]}</li>
+                    <li class="">
+                        <span class="c-important">Focus:</span> {[school.acf.focus]}</li>
+                    <li class="">
+                        <span class="c-important">Price Range:</span> {[school.acf.price_range]}</li>
+                </ul>
+                <div class="c-card__footer">
+                    <a href="{[school.link]}" class="card-link" title="View school">View School</a>
                 </div>
             </div>
         </div>

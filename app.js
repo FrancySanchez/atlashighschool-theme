@@ -1,56 +1,65 @@
-var atlasApp = angular.module('atlasApp', [ 'ngRoute']);
+var atlasApp = angular.module('atlasApp', ['ngRoute']);
 var api = {};
 
 // This to avoid conflicts with the twigs syntax {{}} as it happens to be the same in angular, hence the need to change it to {[]} instead.
- atlasApp.config(function($interpolateProvider) {
+atlasApp.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('{[');
     $interpolateProvider.endSymbol(']}');
-  });
-
-
-atlasApp.config(function($routeProvider, $locationProvider){
-        // Enable html5 mode
-        $locationProvider.html5Mode(true);
 });
 
-atlasApp.controller('filtersCtrl', ['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce){
 
-        console.log('Hellow world');
+atlasApp.config(function($routeProvider, $locationProvider) {
+    // Enable html5 mode
+    $locationProvider.html5Mode(true);
+});
 
-        // JSON content location
-        api.query = 'http://localhost:8888/Highschool/wp-json/wp/v2/schools/';
+atlasApp.controller('filtersCtrl', ['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce) {
 
-        $http.get( api.query ).success(function(reponse){
-            $scope.posts = reponse;
-            console.log($scope.posts);
-        });
+    console.log('Hellow world');
 
-        $scope.query = '';
-        $scope.updateResults = function($keyword, query){
+    // JSON content location
+    api.query = 'http://localhost:8888/Highschool/wp-json/wp/v2/schools/';
+
+    $http.get(api.query).success(function(reponse) {
+        $scope.posts = reponse;
+        console.log($scope.posts);
+    });
+
+    $scope.query = {};
+
+    $scope.updateResults = function($keyword, query) {
+
+        // if ($keyword.type == 'Private') {
+        //     console.log('yahoo')
+        // }
+        var filteredSchools = $scope.query;
+
+        if (filteredSchools == '') {
+            filteredSchools = $keyword;
+        } else {
             
+            if (filteredSchools.indexOf($keyword) !== -1) {
 
-             if ($scope.query == '') {
-                $scope.query = $keyword;
-             }
-             else{
-                $scope.query = $scope.query + ' ' + $keyword;
-             }
-             console.log($scope.query);
-             return query;
-            // $scope.posts
-        };
+            } else {
+                filteredSchools = filteredSchools.push($keyword);
+            }
 
+        }
+        console.log(filteredSchools);
+        return filteredSchools;
+    };
 
 
-    }]);
+
+}]);
 
 
 
 
 
 // atlasApp.controller('filtersCtrl', ['$scope', function($scope){
-	
-	
+
+
 // }])
 
 
@@ -135,4 +144,3 @@ atlasApp.controller('filtersCtrl', ['$scope', '$http', '$routeParams', '$sce', f
 //     };
 //     return ajaxRequestService;
 // });
-

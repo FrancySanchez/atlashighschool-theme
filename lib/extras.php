@@ -33,7 +33,7 @@ function excerpt_more() {
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 
-// Register Custom Post Type
+// Registerings Schools Custom Post Type
 function custom_post_type_schools() {
 
   $labels = array(
@@ -80,7 +80,7 @@ function custom_post_type_schools() {
     'exclude_from_search'   => false,
     'publicly_queryable'    => true,
     'capability_type'       => 'page',
-    'show_in_rest'       => true,
+    'show_in_rest'          => true,
 
   );
   register_post_type( 'schools', $args );
@@ -88,6 +88,7 @@ function custom_post_type_schools() {
 }
 add_action( 'init',  __NAMESPACE__ . '\\custom_post_type_schools', 0 );
 
+// 
 $timber = new \Timber\Timber();
 
 
