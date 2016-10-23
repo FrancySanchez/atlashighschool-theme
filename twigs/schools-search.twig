@@ -3,15 +3,18 @@
 {{dump(schools)}}
 </pre> #}
 <div class="container" ng-controller="filtersCtrl">
-    <div class="row js-school-filters">
+    <div class="panel">
+      
+    </div>
+    <div class="row js-school-filters" ng-init="query = ''">
         <div class="col-xs">
             School type
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' ng-init="" ng-click="filterSchools('public')">Public</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('The')">The</a>
                 </li>
-                <li class="list-inline-item"> 
-                	<a class='btn btn-secondary btn-sm' ng-click="filterSchools('private')">Private</a>
+                <li class="list-inline-item">
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults('King')">King</a>
                 </li>
             </ul>
         </div>
@@ -19,9 +22,9 @@
             Acommodation
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' >Homestay</a>
+                    <a class='btn btn-secondary btn-sm' ng-click="updateResults()">All</a>
                 </li>
-                <li class="list-inline-item"> <a class='btn btn-secondary btn-sm' >Boarding School</a>
+                <li class="list-inline-item"> <a class='btn btn-secondary btn-sm'>Boarding School</a>
                 </li>
             </ul>
         </div>
@@ -29,13 +32,13 @@
             Gender
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' >Only boys</a>
+                    <a class='btn btn-secondary btn-sm'>Only boys</a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' >Only girls</a>
+                    <a class='btn btn-secondary btn-sm'>Only girls</a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' >Mixed</a>
+                    <a class='btn btn-secondary btn-sm'>Mixed</a>
                 </li>
             </ul>
         </div>
@@ -43,26 +46,40 @@
             Duration
             <ul class="list-inline">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' >Year</a>
+                    <a class='btn btn-secondary btn-sm'>Year</a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' >Term</a>
+                    <a class='btn btn-secondary btn-sm'>Term</a>
                 </li>
             </ul>
         </div>
     </div>
     <hr>
     <div class="row js-schools">
-        {% for school in schools %}
-        <div class="col-md-3 {{ school.ID}} js-type-{{ school.school_type|replace(' ', '-')|lower}}"  ng-hide="">
+        <div class="col-md-3" ng-repeat="post in posts | filter:query ">
+            <div class="card">
+                <div class="card-block">
+                    <h3 class="c-card-title"> 
+                             <a href="{[school.link]}" class="card-link" title="View school">
+                                {[post.title.rendered]} 
+                                </a>
+                            </h3>
+                </div>
+                <div class="post-content">
+                    {[post.type]}
+                </div>
+            </div>
+        </div>
+        {# {% for school in schools %}
+        <div class="col-md-3 {{ school.ID}} js-type-{{ school.school_type|replace(' ', '-')|lower}}" ng-hide="">
             <div class="card">
                 <a href="{{school.link}}" class="card-link" title="View school">
                     <img class=" c-card-head card-img-top" src="{{ school.featured_image|resize(300, 200)}}" width="100%" alt="Card image cap">
                 </a>
                 <div class="card-block">
                     <h3 class="c-card-title">
-			    		<a href="{{school.link}}" class="card-link" title="View school">{{school.post_title}}</a>
-			    	</h3>
+                        <a href="{{school.link}}" class="card-link" title="View school">{{school.post_title}}</a>
+                    </h3>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class=""> <span class="c-important">School type:</span> {{ school.school_type}}</li>
@@ -78,6 +95,6 @@
                 </div>
             </div>
         </div>
-        {% endfor %}
+        {% endfor %} #}
     </div>
 </div>

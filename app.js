@@ -1,15 +1,59 @@
 var atlasApp = angular.module('atlasApp', [ 'ngRoute']);
+var api = {};
 
-// angular.element('.c-navbar').addClass('yo');
+// This to avoid conflicts with the twigs syntax {{}} as it happens to be the same in angular, hence the need to change it to {[]} instead.
+ atlasApp.config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{[');
+    $interpolateProvider.endSymbol(']}');
+  });
+
+
+atlasApp.config(function($routeProvider, $locationProvider){
+        // Enable html5 mode
+        $locationProvider.html5Mode(true);
+});
+
+atlasApp.controller('filtersCtrl', ['$scope', '$http', '$routeParams', '$sce', function($scope, $http, $routeParams, $sce){
+
+        console.log('Hellow world');
+
+        // JSON content location
+        api.query = 'http://localhost:8888/Highschool/wp-json/wp/v2/schools/';
+
+        $http.get( api.query ).success(function(reponse){
+            $scope.posts = reponse;
+            console.log($scope.posts);
+        });
+
+        $scope.query = '';
+        $scope.updateResults = function($keyword, query){
+            
+
+             if ($scope.query == '') {
+                $scope.query = $keyword;
+             }
+             else{
+                $scope.query = $scope.query + ' ' + $keyword;
+             }
+             console.log($scope.query);
+             return query;
+            // $scope.posts
+        };
 
 
 
-atlasApp.controller('filtersCtrl', ['$scope', function($scope){
+    }]);
+
+
+
+
+
+// atlasApp.controller('filtersCtrl', ['$scope', function($scope){
 	
-	$scope.filterSchools = function (filter){
-		alert(filter);
-	}
-}])
+	
+// }])
+
+
 
 // atlasApp.directive('myNavscroll', function($window) {
 //     return function(scope, element, attrs) {
@@ -91,3 +135,4 @@ atlasApp.controller('filtersCtrl', ['$scope', function($scope){
 //     };
 //     return ajaxRequestService;
 // });
+
