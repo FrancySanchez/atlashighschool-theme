@@ -47,6 +47,7 @@
 .c-section-information__icon {
     padding-bottom:30px;
     color: #b8071f;
+    transition: .1s;
 }
 
 .circulo {
@@ -58,6 +59,10 @@
      border: 3px solid #f0f0f0;
      padding: 15px;
      margin-bottom: 15px;
+}
+.c-section-information__icon:hover{
+    transform: scale(1.2);
+
 }
 
 .c-section-highschool{
