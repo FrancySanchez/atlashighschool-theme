@@ -78,8 +78,11 @@
         position: fixed;
         top: 0;
         width: 100%;
-        background: white;
+        color: white;
         z-index: 20000000;
+        border-bottom: 2px solid #f0f0f0;
+        background-color: rgba(254, 254, 255, 0.84);
+        padding-top: 10px;
     }
 }
 
@@ -91,7 +94,7 @@
     margin-bottom: 20px;
     font-size: 12px;
     text-align: center;
-    padding: 20px 50px 10px 50px;
+    padding: 20px 30px 10px 30px;
 }
 
 

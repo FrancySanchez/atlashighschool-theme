@@ -27,19 +27,27 @@
 <div class="c-section-information c-text container" id="information">
     <div class="row">
         <div class="col-md-3 text-center">
-            <i class="c-section-information__icon circulo fa fa-map-marker fa-5x"></i>
+            <a href="high-school/">
+              <i class="c-section-information__icon circulo fa fa-map-marker fa-5x"></i>
+            </a>
             <p class="c-section-information__text"><?php the_field('icon_1_description')?></p>
         </div>
         <div class="col-md-3 text-center">
-            <i class="c-section-information__icon circulo fa fa-flag fa-5x"></i>
+            <a href="irish-education-system">
+              <i class="c-section-information__icon circulo fa fa-flag fa-5x"></i>
+            </a>
             <p class="c-section-information__text"> <?php the_field('icon_2_description')?></p>
         </div>
          <div class="col-md-3 text-center">
-            <i class="c-section-information__icon circulo fa fa-comments-o fa-5x"></i>
+            <a href="registration-process">
+              <i class="c-section-information__icon circulo fa fa-comments-o fa-5x"></i>
+            </a> 
             <p class="c-section-information__text"><?php the_field('icon_3_description')?></p>
         </div>
         <div class="col-md-3 text-center">
-            <i class="c-section-information__icon circulo fa fa-home fa-5x"></i>
+            <a href="accommodation">
+              <i class="c-section-information__icon circulo fa fa-home fa-5x"></i>
+             </a> 
             <p class="c-section-information__text"><?php the_field('icon_4_description')?></p>
         </div>
     </div>
@@ -57,8 +65,8 @@
           </div>
         </div>
     </div>
-      <div class="container">
-        <div class="row container__img">
+<div class="container">
+      <div class="row container__img">
           <div class="col-md-4 ">
              <img class="c-section-highschool__img" src=" <?php the_field('top_high_school_img_1') ?>"> 
           </div>
@@ -68,8 +76,8 @@
           <div class="col-md-4 ">
              <img class="c-section-highschool__img" src=" <?php the_field('top_high_school_img_3') ?>"> 
           </div>
-        </div>
-    </div>
+        </div>  
+  </div>   
 </div>
 <!-- SECTION 2 OFF-->
 

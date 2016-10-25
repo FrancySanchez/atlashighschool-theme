@@ -56,14 +56,6 @@
               <p class="c-attributes-text">{{acfs.focus}}</p>
           </div>
       </div>
-      {# <div class="row">
-        <div class="col-md-2">
-              <i class="c-attribute-icons fa fa-eur fa-2x"></i>
-          </div>
-          <div class="col-md-4">
-              <p class="c-attributes-text">{{acfs.price_range}}</p>
-          </div>  
-      </div> #}
   </div>
 </div>
 
@@ -83,9 +75,10 @@
 
 <div class="p-school__section">
 	<div class="col-md-12">
-	   {% for item in acfs.photos %}
+	   <p>{{acfs.photos}}</p>
+     {# {% for item in acfs.photos %}
 		    <img class="p-galery__img" src="{{item.url}}" width="200px">
-	   {% endfor %} 
+	   {% endfor %} #} 
 	</div>
 </div>
 
@@ -94,6 +87,13 @@
     {{acfs.fees}} 
 </div>
 
+<div class="p-school__section"> 
+  <div class="row">
+    <div class="col-md-6" >
+       <a href="http://localhost:8888/Highschool/enquire/" class="btn btn-primary btn-justified" title="Register">Want to Register? Click Here</a>
+    </div>
+  </div> 
+</div>
 
 <div class="p-school__section">
 	<h2 class="c-subtitle">Location</h2>
@@ -103,17 +103,7 @@
 
 
 
-<div class="p-school__section"> 
-  <div class="row">
-    <div class="col-md-6" >
-       <a href="http://localhost:8888/Highschool/contact/" class="btn btn-primary btn-justified" title="Contact us today"> Contact us today!</a>
-    </div>
-    <div class="col-md-6" >
-       <a href="http://localhost:8888/Highschool/enquire/" class="btn btn-primary btn-justified" title="Register">Want to Register? Click Here</a>
-    </div>
 
-  </div> 
-</div>
 
 
 

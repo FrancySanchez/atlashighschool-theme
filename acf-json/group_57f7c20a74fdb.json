@@ -114,7 +114,8 @@
             },
             "choices": {
                 "Year": "Year",
-                "Term": "Term"
+                "Term": "Term",
+                "Year and Term": "Year and Term"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -162,10 +163,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_57f92e671fb20",
-            "label": "Price Range",
-            "name": "price_range",
-            "type": "select",
+            "key": "field_5807c743c517c",
+            "label": "Range Price",
+            "name": "range_price",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -174,18 +175,11 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "4000\u20ac-12000\u20ac": "4000 \u20ac - 12000 \u20ac",
-                "12000\u20ac-16000\u20ac": "12000 \u20ac - 16000 \u20ac",
-                "N\/a: N\/A": "N\/a: N\/A"
-            },
-            "default_value": [],
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": ""
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_57f92f9e0ee3d",
@@ -249,7 +243,7 @@
             "key": "field_57f934258bec3",
             "label": "Photos",
             "name": "photos",
-            "type": "gallery",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -258,17 +252,10 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
-            "max": "",
-            "insert": "append",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1
         },
         {
             "key": "field_57f934658bec5",
@@ -325,5 +312,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1476351509
+    "modified": 1477304379
 }

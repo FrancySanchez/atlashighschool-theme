@@ -28,13 +28,13 @@
       </div>
   </div>
 
-<header class="banner js-nav-bar"  >
+<header class="banner js-nav-bar">
   <div class="container">
      <div class="c-navbar">
         <a class="brand" href="<?= esc_url(home_url('/')); ?>">
           <img src="http://localhost:8888/atlas-logo.jpg" width="130" height="60">
         </a>
-        <nav class="nav-primary">
+        <nav class="nav-primary ">
           <?php if (has_nav_menu('primary_navigation')) :
                     wp_nav_menu([
                           'theme_location'  => 'primary_navigation',

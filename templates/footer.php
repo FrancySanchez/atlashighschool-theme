@@ -19,11 +19,11 @@
     <div class="row">
       <div class="col-md-9">
           <div class="nav-footer"> 
-            <a href="Enquire" class="btn buttom-footer btn-justified" title="Contact">Enquire Now!</a>
+            <a href="Enquire" class="buttom-footer btn-5" title="Contact">Enquire Now!</a>
           </div>
       </div>
       <div class="col-md-3">
-            <a href="contact" class="btn buttom-footer btn-justified" title="Contact">Contact us!</a>
+            <a href="contact" class="buttom-footer btn-5" title="Contact">Contact us!</a>
       </div>
     </div>
 	</div>

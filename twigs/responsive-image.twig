@@ -1,0 +1,55 @@
+{% if not desktop_size %}
+     {% set desktop_size  = {'width' : 1400, 'height' : 350} %}
+{% endif %}
+{% if not tablet_size %}
+    {% set tablet_size   = {'width' : 768 , 'height' : 214} %}
+{% endif %}
+{% if not mobile_size %}
+    {% set mobile_size   = {'width' : 375 , 'height' : 104} %}
+{% endif %}
+
+
+{% block normal_styles %}
+<style>
+    /* Normal screens  */
+    @media only screen and (max-width: 40em) {
+        .hero-inline-image {
+            background-image: url('{{image | resize(mobile_size.width, mobile_size.height, 'center')}}');
+        }
+    }
+
+    @media only screen and (min-width: 40.063em) and (max-width: 64em) {
+        .hero-inline-image {
+            background-image: url('{{image|resize(tablet_size.width,tablet_size.height, 'center')}}');
+        }
+    }
+
+    @media only screen and (min-width: 64.063em) {
+        .hero-inline-image {
+            background-image: url('{{image|resize(desktop_size.width, desktop_size.height, 'center')}}');
+        }
+    }
+</style>
+{% endblock %}
+
+{% block retina_styles %}
+<style>
+    @media only screen and (max-width: 40em) and (-webkit-min-device-pixel-ratio: 2) {
+        .hero-inline-image {
+            background-image: url('{{image|resize(mobile_size.width,mobile_size.height, 'center')| retina(2)}}');
+        }
+    }
+
+    @media only screen and (min-width: 40.063em) and (max-width: 64em) and (-webkit-min-device-pixel-ratio: 2) {
+        .hero-inline-image {
+            background-image: url('{{image|resize(tablet_size.width,tablet_size.height, 'center')| retina(2)}}');
+        }
+    }
+
+    @media only screen and (min-width: 64.063em) and (-webkit-min-device-pixel-ratio: 2) {
+        .hero-inline-image {
+            background-image: url('{{image|resize(desktop_size.width,desktop_size.height, 'center')| retina(2)}}');
+        }
+    }
+</style>
+{% endblock %}
