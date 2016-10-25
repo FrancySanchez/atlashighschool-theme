@@ -61,8 +61,7 @@ function asset_path($filename) {
 function enqeueing_scripts(){
    
     // if (is_page_template('template-schools-search.php')) {
-        wp_enqueue_script('angularjs2', 'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js', array ( 'jquery' ), false, true);
-        wp_enqueue_script('angularjsRoute', '//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js', array ( 'jquery' ), false, true);
+        wp_enqueue_script('angularjs2', '//unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js', array ( 'jquery' ), false, true);
         wp_enqueue_script('atlasApp', get_stylesheet_directory_uri() . '/app.js', array ( 'jquery' ), false, true);
 
 
