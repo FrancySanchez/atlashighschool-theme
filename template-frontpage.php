@@ -110,7 +110,7 @@
 <div class="c-section-accreditations">
   <div class="container" id="accreditations">
       <div class="row">
-          <div class="col-md-12 ">
+          <div class="col-md-12 hidden-sm-down ">
              <img class="" src=" <?php the_field('accreditations_1') ?>"> 
           </div>
       </div>

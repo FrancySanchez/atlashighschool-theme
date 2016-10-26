@@ -1,4 +1,11 @@
 //-----------------Baner red------------------------------------
+.inner {
+    max-width: 1140px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .top-rail {
     height: 33px;
     line-height: 33px;
@@ -6,7 +13,6 @@
     font-size: 1rem;
     margin-bottom: 20px;
 }
-
 
 .top-rail a {
     text-decoration: none;
@@ -26,11 +32,16 @@
     margin-left: 10px;
 }
 
-
-.top-rail-links:hover, .top-rail .icons a:hover {
+.top-rail-links:hover{
     background: #fff;
     color: #cf142b;
     //padding: 10px 10px;
+}
+.top-rail .icons a:hover {
+    background: #fff;
+    color: #cf142b;
+    padding-top: 10px;
+    padding-bottom:10px;
 }
 
 //------------------Baner red off-----------------------------
@@ -48,17 +59,16 @@
 }
 
 //-----------------------------------------------------------
-.inner {
-    max-width: 1140px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
+
 
 .c-navbar {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @include media-breakpoint-down(sm) {
+        width: 50%
+    }
     &__menu {
         display: flex;
         list-style: none;
@@ -87,7 +97,6 @@
 }
 
 .c-enquire {
-
     background-color: #b8071f;
     border: 1px solid #b8071f;
     float: right;
@@ -97,12 +106,11 @@
     padding: 20px 30px 10px 30px;
 }
 
-
 ///SCHOOL HEADER-----------------------------------------------------------
-.c-school-head{
-    margin-bottom:50px;
+.c-school-head {
+    margin-bottom: 50px;
     background-size: cover;
     background-position: center;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }

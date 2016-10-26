@@ -3,11 +3,11 @@
           <nav class="menu">              
             <?php dynamic_sidebar('sidebar-toprail'); ?>
           </nav>   
-          <div class="toprail-links">
+          <div class="toprail-links hidden-sm-down">
             <a href="http://localhost:8888/Highschool/contact/" class="top-rail-links">Contact</a>
             <a href="http://atlaslanguageschool.com/" class="top-rail-links" target="blank">Atlas Language School</a>
           </div>
-          <nav class="icons">
+          <nav class="icons hidden-sm-down">
             <a href="https://www.facebook.com/atlas.language.school?fref=ts" target="blank">
               <i class="fa fa-facebook"></i>
             </a>
@@ -34,12 +34,13 @@
         <a class="brand" href="<?= esc_url(home_url('/')); ?>">
           <img src="http://localhost:8888/atlas-logo.jpg" width="130" height="60">
         </a>
-        <nav class="nav-primary ">
+        <nav class="nav-primary">
           <?php if (has_nav_menu('primary_navigation')) :
-                    wp_nav_menu([
-                          'theme_location'  => 'primary_navigation',
+                    wp_nav_menu(
+                         ['theme_location'  => 'primary_navigation',
                           'menu_class'      => 'c-navbar__menu',]);
             endif;?>  
+
         </nav>
         <a href="http://localhost:8888/Highschool/enquire/" class="btn btn-primary btn-justified c-enquire" title="Enquire now"> ENQUIRE NOW</a>
     </div>
