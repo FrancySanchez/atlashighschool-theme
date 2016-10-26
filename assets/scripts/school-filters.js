@@ -1,52 +1,54 @@
 (function($) {
 
-	// flatten object by concatting values
-	function concatValues( obj ) {
-	  var value = '';
-	  for ( var prop in obj ) {
-	    value += obj[ prop ] ;
-	  }
-	  return value;
-	}
 
 	$(document).ready(function(){
 
 		// vars
 		// Initializing the grid
-		var grid = $('.js-schools').isotope();
-		var filters =  [];
+		var grid = $('.js-schools').isotope(
+			{
+				 itemSelector: '.js-school'
+			});
+		var filters =  {};
 
 		// Filtering the grid
 		$('.js-school-filters a').on('click', function(){
 
-			$(this).toggleClass('btn-danger');
-			var filterValue = '.' + $(this).attr('data-filter') + ',';
+			$(this).addClass('btn-danger');
+			$(this).parent().siblings().find('a').removeClass('btn-danger');
 
-			if (filters.indexOf(filterValue) !== -1) {
-				filters.pop(filterValue);
-			}
-			else{
-				filters.push(filterValue);
-			}
+		
+			// get group key
+			var buttonGroup = $(this).closest('.list-inline');
 
-			var flatFilterObject = concatValues( filters );
+			var filterGroup = buttonGroup.attr('data-filter-group');
 
-			console.log(flatFilterObject);
-			$(grid).isotope({ filter: flatFilterObject.slice(0, -1) });
+			// set filter for group
+			filters[ filterGroup ] = $(this).attr('data-filter');
+
+			// combine filters
+			var filterValue = concatValues( filters );
+			grid.isotope({ filter: filterValue });
 
 		});
 
+		$('.js-reset-filters').on('click', function(){
+			$('.js-school-filters a.js-reset').click();	
+			console.log('yo');
+		});
 
-		// $(grid).isotope({ filter: '.public' });
-		// $(grid).isotope({ filter: '.private' });
-		// $(grid).isotope({ filter: '.homestay' });
-		// $(grid).isotope({ filter: '.boarding-school' });
-		// $(grid).isotope({ filter: '.mixed' });
-		// $(grid).isotope({ filter: '.only-girls' });
-		// $(grid).isotope({ filter: '.only-boys' });
-		// $(grid).isotope({ filter: '.term' });
-		// $(grid).isotope({ filter: '.year' });
-		// $(grid).isotope({ filter: '.year-and-term' });
+		// flatten object by concatting values
+			function concatValues( obj ) {
+			  var value = '';
+			  for ( var prop in obj ) {
+			    value += obj[ prop ] ;
+			  }
+			  console.log(value);
+			  return value;
+			}
+
+
+
 	});
 	
 	

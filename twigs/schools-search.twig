@@ -8,62 +8,79 @@
     <div class="row js-school-filters">
         <div class="col-xs">
             School type
-            <ul class="list-inline">
+            <ul class="list-inline" data-filter-group="type">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="public" >Public
+                    <a class='btn btn-secondary btn-sm' data-filter=".public" >Public
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="private" >Private
+                    <a class='btn btn-secondary btn-sm' data-filter=".private" >Private
+                    </a>
+                </li>
+                <li style="display:none">
+                    <a class='btn btn-secondary btn-sm js-reset' data-filter="" >Any
                     </a>
                 </li>
             </ul>
         </div>
         <div class="col-xs">
             Acommodation
-            <ul class="list-inline">
+            <ul class="list-inline" data-filter-group="accommodation">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="homestay">Homestay
+                    <a class='btn btn-secondary btn-sm' data-filter=".homestay">Homestay
                     </a>
                 </li>
                 <li class="list-inline-item"> 
-                    <a class='btn btn-secondary btn-sm' data-filter="boarding-school">Boarding School
+                    <a class='btn btn-secondary btn-sm' data-filter=".boarding-school">Boarding School
+                    </a>
+                </li>
+                <li style="display:none">
+                    <a class='btn btn-secondary btn-sm js-reset' data-filter="" >Any
                     </a>
                 </li>
             </ul>
         </div>
         <div class="col-xs">
             Gender
-            <ul class="list-inline">
+            <ul class="list-inline" data-filter-group="gender">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="only-boys">Only boys
+                    <a class='btn btn-secondary btn-sm' data-filter=".only-boys">Only boys
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="only-girls">Only girls
+                    <a class='btn btn-secondary btn-sm' data-filter=".only-girls">Only girls
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="mixed">Mixed
+                    <a class='btn btn-secondary btn-sm' data-filter=".mixed">Mixed
+                    </a>
+                </li>
+                <li style="display:none">
+                    <a class='btn btn-secondary btn-sm js-reset' data-filter="" >Any
                     </a>
                 </li>
             </ul>
         </div>
         <div class="col-xs">
             Duration
-            <ul class="list-inline">
+            <ul class="list-inline" data-filter-group="duration">
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="year">Year
+                    <a class='btn btn-secondary btn-sm' data-filter=".year">Year
                     </a>
                 </li>
                 <li class="list-inline-item">
-                    <a class='btn btn-secondary btn-sm' data-filter="term">Term
+                    <a class='btn btn-secondary btn-sm' data-filter=".term">Term
+                    </a>
+                </li>
+                <li style="display:none">
+                    <a class='btn btn-secondary btn-sm js-reset' data-filter="" >Any
                     </a>
                 </li>
             </ul>
         </div>
     </div>
     <hr>
+    <a class="btn js-reset-filters right">Reset all</a>
     <div class="row js-schools">
         
         {% for school in schools %}
