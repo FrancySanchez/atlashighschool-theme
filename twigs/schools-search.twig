@@ -1,7 +1,3 @@
-{#
-<pre>
-{{dump(schools)}}
-</pre> #}
 <div class="container" >
     <div class="panel">
     </div>
@@ -79,9 +75,44 @@
             </ul>
         </div>
     </div>
+    
     <hr>
     <a class="btn js-reset-filters right">Reset all</a>
-    <div class="row js-schools">
+    
+  <div class="row js-schools">
+     {% for school in schools %}
+        <div class="col-md-4 {{ school.ID}} js-school {{ school.accommodation|replace(' ', '-')|lower}} {{ school.gender|replace(' ', '-')|lower}} {{ school.duration|replace(' ', '-')|lower}}  {{ school.school_type|replace(' ', '-')|lower}}" >
+            <div class="c-article-placeholder">
+                <a href="{{school.link}}" class="card-link" title="View school">
+                    <img class="c-article-placeholder__header" src="{{ school.featured_image|resize(400, 200)}}" width="100%" alt="Card image cap">
+                </a>
+                <div class="c-article-placeholder__body">
+                    <div class="c-article-placeholder__title">                
+                     <a href="{{school.link}}" class="card-link" title="View school">{{school.post_title}}</a>
+                    </div>
+                    <div class="c-article-placeholder__content-line-long">
+                       <ul class="list-group list-group-flush">
+                        <li> <span class="c-important">School type:</span> {{ school.school_type}}</li>
+                        <li> <span class="c-important">Accommodation:</span> {{ school.accommodation}}</li>
+                        <li> <span class="c-important">Gender:</span> {{ school.gender}}</li>
+                        <li> <span class="c-important">Duration:</span> {{ school.duration}}</li>
+                        <li> <span class="c-important">School Population:</span> {{ school.population}}</li>
+                        <li> <span class="c-important">Focus:</span> {{ school.focus}}</li>
+                        <li> <span class="c-important">Price Range:</span> {{ school.price_range}}</li>
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="c-article-placeholder__footer">
+                        <a href="{{school.link}}" title="View school">View School</a>
+                    </div>
+                
+            </div>
+        </div>
+        {% endfor %}
+    </div> 
+
+
+    {# <div class="row js-schools">
         
         {% for school in schools %}
         <div class="col-md-3 {{ school.ID}} js-school {{ school.accommodation|replace(' ', '-')|lower}} {{ school.gender|replace(' ', '-')|lower}} {{ school.duration|replace(' ', '-')|lower}}  {{ school.school_type|replace(' ', '-')|lower}}" >
@@ -109,5 +140,5 @@
             </div>
         </div>
         {% endfor %}
-    </div>
+    </div> #}
 </div>

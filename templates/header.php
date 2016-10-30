@@ -5,7 +5,7 @@
           </nav>   
           <div class="toprail-links hidden-sm-down">
             <a href="http://localhost:8888/Highschool/contact/" class="top-rail-links">Contact</a>
-            <a href="http://atlaslanguageschool.com/" class="top-rail-links" target="blank">Atlas Language School</a>
+            <a href="http://atlaslanguageschool.com/" class="top-rail-links" target="blank">Atlas Language Schools</a>
           </div>
           <nav class="icons hidden-sm-down">
             <a href="https://www.facebook.com/atlas.language.school?fref=ts" target="blank">
@@ -32,7 +32,7 @@
   <div class="container">
      <div class="c-navbar">
         <a class="brand" href="<?= esc_url(home_url('/')); ?>">
-          <img src="http://localhost:8888/atlas-logo.jpg" width="130" height="60">
+          <img src="http://localhost:8888/LOGO.png" width="130" height="56">
         </a>
         <nav class="nav-primary">
           <?php if (has_nav_menu('primary_navigation')) :
