@@ -1,13 +1,13 @@
- <div class="top-rail">
+ <div class="top-rail row hidden-sm-down">
       <div class="inner">
           <nav class="menu">              
             <?php dynamic_sidebar('sidebar-toprail'); ?>
           </nav>   
-          <div class="toprail-links hidden-sm-down">
+          <div class="toprail-links">
             <a href="http://localhost:8888/Highschool/contact/" class="top-rail-links">Contact</a>
             <a href="http://atlaslanguageschool.com/" class="top-rail-links" target="blank">Atlas Language Schools</a>
           </div>
-          <nav class="icons hidden-sm-down">
+          <nav class="icons">
             <a href="https://www.facebook.com/atlas.language.school?fref=ts" target="blank">
               <i class="fa fa-facebook"></i>
             </a>
@@ -28,21 +28,44 @@
       </div>
   </div>
 
-<header class="banner js-nav-bar">
-  <div class="container">
-     <div class="c-navbar">
-        <a class="brand" href="<?= esc_url(home_url('/')); ?>">
-          <img src="http://localhost:8888/LOGO.png" width="130" height="56">
-        </a>
-        <nav class="nav-primary">
-          <?php if (has_nav_menu('primary_navigation')) :
+<header role="banner" class="c-header js-header ">
+        <div class="c-header__container align-justify flex-items-md-middle">
+            <!-- logo -->
+            <div class="c-header__logo">
+                <a href="<?= esc_url(home_url('/')); ?>" class="brand" title="<?php echo get_bloginfo( 'name' ) ?>" >
+                                    
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Atlashigh-Logo.png" alt="Logo of <?php bloginfo('name') ?>" width="200">
+                </a>
+            </div>
+            <!-- /logo -->
+            <!-- nav -->
+            <a href="#" class="js-responsive-main-menu-toggle c-responsive-navbar__toggler" style="display:none;" id="boi-event-main-menu-toggle">
+              <i class="fa fa-bars"></i>
+            </a>
+            <a href="#" class="js-responsive-main-menu-closer c-responsive-navbar__closer" style="display:none; " id="boi-main-menu-close" >
+              <i class="fa fa-remove"></i>
+            </a>
+            <nav class="c-header__nav js-mainMenu  " role="navigation">
+                 <?php if (has_nav_menu('primary_navigation')) :
                     wp_nav_menu(
-                         ['theme_location'  => 'primary_navigation',
-                          'menu_class'      => 'c-navbar__menu',]);
-            endif;?>  
-
-        </nav>
-        <a href="http://localhost:8888/Highschool/enquire/" class="btn btn-primary btn-justified c-enquire" title="Enquire now"> ENQUIRE NOW</a>
-    </div>
-  </div>
-</header>
+                         [
+                          'theme_location'  => 'primary_navigation',
+                          'menu'            => '',
+                          'container'       => 'div',
+                          'container_class' => 'c-navbar',
+                          'container_id'    => '',
+                          'menu_id'         => '',
+                          'echo'            => true,
+                          'fallback_cb'     => 'wp_page_menu',
+                          'before'          => '',
+                          'after'           => '',
+                          'link_before'     => '',
+                          'link_after'      => '',
+                          'items_wrap'      => '<ul class="c-navbar__menu">%3$s</ul>',
+                          'walker'          => ''
+                          ,]);
+            endif;?> 
+            </nav>
+            <!-- /nav -->
+        </div>
+    </header>

@@ -4,7 +4,9 @@
       "files": [
         "scripts/main.js",
         "scripts/navbar-top-fixed.js",
-        "scripts/school-filters.js"
+        "scripts/school-filters.js",
+        "scripts/nav-dropdown.js",
+        "scripts/responsive-menu.js"
       ],
       "main": true
     },

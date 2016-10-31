@@ -91,4 +91,15 @@ add_action( 'init',  __NAMESPACE__ . '\\custom_post_type_schools', 0 );
 // 
 $timber = new \Timber\Timber();
 
+// Adding a class to the submenu
+function new_submenu_class($menu) {
+  $menu = preg_replace('/ class="sub-menu"/','/ class="c-navbar__submenu js-submenu" /',$menu);  
+  return $menu;  
+}
+
+add_filter('wp_nav_menu', __NAMESPACE__ . '\\new_submenu_class');
+
+
+
+
 

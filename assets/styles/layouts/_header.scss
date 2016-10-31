@@ -11,7 +11,6 @@
     line-height: 33px;
     background: #cf142b;
     font-size: 1rem;
-    margin-bottom: 20px;
 }
 
 .top-rail a {
@@ -61,28 +60,43 @@
 //-----------------------------------------------------------
 
 
-.c-navbar {
+///SCHOOL HEADER-----------------------------------------------------------
+.c-school-head {
+    margin-bottom: 50px;
+    background-size: cover;
+    background-position: center;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
+}
 
-    @include media-breakpoint-down(sm) {
-        width: 50%
-    }
-    &__menu {
+.c-header{
+    width: 100%;
+    
+    &__container{
         display: flex;
-        list-style: none;
-        li {
-            padding: 1rem;
-            a {
-                color: #777;
-                font-size: 14px;
-            }
-            a:hover {
-                color: #b8071f;
-                text-decoration: none;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem .5rem;
+        max-width: 70rem;
+        margin: 0 auto;
+        @include media-breakpoint-down(sm) {
+           
+            border-top: 3px solid $brand-primary;
+        }
+
+    }
+
+
+    &__logo{
+        img{
+            @include media-breakpoint-down(sm) {
+                width: 140px;
             }
         }
+
+    }
+    &__nav{
+        margin-left: auto;
     }
     &--fixed-top {
         position: fixed;
@@ -96,21 +110,5 @@
     }
 }
 
-.c-enquire {
-    background-color: #b8071f;
-    border: 1px solid #b8071f;
-    float: right;
-    margin-bottom: 20px;
-    font-size: 12px;
-    text-align: center;
-    padding: 20px 30px 10px 30px;
-}
 
-///SCHOOL HEADER-----------------------------------------------------------
-.c-school-head {
-    margin-bottom: 50px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-}
+

@@ -1,16 +1,15 @@
 (function($) {
     // Site title
-    var navbar = $('.js-nav-bar'),
+    var navbar = $('.js-header'),
         navbarHeight = navbar.height();
 
     $(window).scroll(function() {
 
-        if ($(window).scrollTop() > navbarHeight) {
+        if ($(window).scrollTop() > navbarHeight && $('body').outerWidth() > 640) {
+            navbar.addClass("c-header--fixed-top");
 
-            navbar.addClass("c-navbar--fixed-top");
         } else {
-            navbar.removeClass("c-navbar--fixed-top");
-
+            navbar.removeClass("c-header--fixed-top");
         }
     });
 

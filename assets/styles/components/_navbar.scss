@@ -1,0 +1,204 @@
+.c-navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &__menu {
+        display: flex;
+        list-style: none;
+        margin-bottom: 0;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    a{
+        color: #777;
+        padding: 1rem;
+        font-size: 14px;
+        text-transform: uppercase;
+         a:hover {
+                color: #b8071f;
+                text-decoration: none;
+            }
+    }
+    .menu-item-has-children{
+        position: relative;
+        & > a{
+            &:after{
+                position: absolute;
+                top: calc(50% - 3px );
+                right: 3px;
+                content: '';
+                width: 0; 
+                height: 0; 
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 4px solid $grey;
+            }
+        }
+    }
+    &__submenu{
+        display: none;
+        position: absolute;
+        background-color: white;
+        z-index: 2;
+        min-width: 210px;
+        list-style-type: none;
+        padding: 0;
+        box-shadow: 2px 2px 3px rgba(0,0,0,.2);
+
+        a{
+            padding: 1rem;
+            display: block;
+
+            &:hover{
+                background-color: rgba($grey,.1);
+            }
+        }
+
+        &.active{
+            display: block;
+        }
+    }
+    &__button{
+        a{
+            @extend .btn;
+            @extend .btn-danger;
+            @extend .btn-sm;
+            color: white;
+
+            &:hover{
+                color: white;
+            }
+        }
+    }
+    &__overlay {
+        background-color: rgba(255, 255, 255, .7);
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index:  2;
+        top: 0;
+        left: 0;
+        display: none;
+        opacity: 0;
+        cursor: pointer;
+    }
+    
+}
+
+
+//  Responsive
+
+// This menu kicks in when there is overflow on the main menu
+$offCanvasDistance: 270px;
+.c-responsive-navbar {
+    background-color: $brand-primary;
+    ;
+    position: fixed;
+    overflow-y: scroll;
+    width: $offCanvasDistance;
+    right: -$offCanvasDistance;
+
+    top: 0;
+    height: 100%;
+    z-index: 4;
+    padding: 0;
+    ul {
+        display: block;
+        list-style-type: none;
+        padding-left: 0;
+        li {
+            border-left: 0;
+            padding: 0;
+            max-width: none;
+            a {
+                // @include rem-fallback(padding, 1);
+                display: block;
+                border-top: 1px solid rgba(0, 0, 0, .05);
+                border-bottom: 1px solid rgba(255, 255, 255, .05);
+                text-transform: none;
+                text-align: left;
+                font-weight: normal;
+                background-color: $brand-primary;
+                transition: all .2s ease;
+                color: white;
+                padding: 1rem;
+                text-transform: uppercase;
+                &:hover,
+                &:focus,
+                &:active {
+                    // background-color: map-get($palette-blue, 'mid-light');
+                    text-decoration: none;
+                }
+            }
+
+            &:last-child:after {
+                content: '';
+                border-top: 1px solid rgba(0, 0, 0, .05);
+                height: 1px;
+                width: 100%;
+                display: block;
+            }
+            ul{
+                padding-left: 1rem;
+            }
+        }
+    }
+    &__overlay {
+        background-color: rgba(255, 255, 255, .7);
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        // z-index:  map-get($z-layers, 'default');
+        top: 0;
+        left: 0;
+        display: none;
+        opacity: 0;
+        cursor: pointer;
+    }
+    &__toggler {
+
+        padding: 5px;
+        position: relative;
+        background: white;
+        font-size: 1.3rem;
+        // @media #{ $small-only } {
+        //     color: white;
+        //     // background-color: $brand-primary;
+        //     // @include rem-fallback(font-size ,1.2  );
+        //     margin-right: 1rem;
+        //  }
+    }
+    &__closer {
+        position: fixed;
+        top: 0;
+        opacity: 0;
+        right: -$offCanvasDistance;
+        color: white;
+        z-index: 5;
+        padding: 10px;
+        background-color: $brand-primary;
+        font-size: 1.5rem
+   }
+   &__enquire-button{
+    background-color: rgba($grey, .05);
+    border-top: 1px solid rgba($grey, .2);
+    border-bottom: 1px solid rgba($grey, .2);
+    padding: .7rem .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a{
+        background-color: $brand-primary;
+        border:1px solid darken($brand-primary, .1);
+        padding: .25rem 1rem;
+        color: white;
+        border-radius: 4px;
+        width:40%;
+        display: block;
+        text-align: center;
+    }
+
+   }
+}
