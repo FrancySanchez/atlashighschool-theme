@@ -1,8 +1,10 @@
 <div class="container" >
     <div class="panel">
     </div>
-    <div class="row js-school-filters">
-        <div class="col-xs">
+<div class="row">
+<div class="col-md-10">
+    <div class="c-filters js-school-filters">
+        <div class="c-filters__filter">
             School type
             <ul class="list-inline" data-filter-group="type">
                 <li class="list-inline-item">
@@ -19,7 +21,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-xs">
+        <div class="c-filters__filter">
             Acommodation
             <ul class="list-inline" data-filter-group="accommodation">
                 <li class="list-inline-item">
@@ -36,7 +38,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-xs">
+        <div class="c-filters__filterc-filters__filter">
             Gender
             <ul class="list-inline" data-filter-group="gender">
                 <li class="list-inline-item">
@@ -57,7 +59,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col-xs">
+        <div class="c-filters__filter">
             Duration
             <ul class="list-inline" data-filter-group="duration">
                 <li class="list-inline-item">
@@ -73,13 +75,17 @@
                     </a>
                 </li>
             </ul>
-        </div>
+        </div>  
     </div>
-    
+   </div> 
+     <div class="cl-md-2">
+            <a class="btn js-reset-filters right">Reset all</a>
+    </div>
+ </div>   
     <hr>
-    <a class="btn js-reset-filters right">Reset all</a>
     
-  <div class="row js-schools">
+    
+{#   <div class="row js-schools">
      {% for school in schools %}
         <div class="col-md-4 {{ school.ID}} js-school {{ school.accommodation|replace(' ', '-')|lower}} {{ school.gender|replace(' ', '-')|lower}} {{ school.duration|replace(' ', '-')|lower}}  {{ school.school_type|replace(' ', '-')|lower}}" >
             <div class="c-article-placeholder">
@@ -109,13 +115,13 @@
             </div>
         </div>
         {% endfor %}
-    </div> 
+    </div>  #}
 
 
-    {# <div class="row js-schools">
+    <div class="row js-schools">
         
         {% for school in schools %}
-        <div class="col-md-3 {{ school.ID}} js-school {{ school.accommodation|replace(' ', '-')|lower}} {{ school.gender|replace(' ', '-')|lower}} {{ school.duration|replace(' ', '-')|lower}}  {{ school.school_type|replace(' ', '-')|lower}}" >
+        <div class="col-md-4 {{ school.ID}} js-school {{ school.accommodation|replace(' ', '-')|lower}} {{ school.gender|replace(' ', '-')|lower}} {{ school.duration|replace(' ', '-')|lower}}  {{ school.school_type|replace(' ', '-')|lower}}" >
             <div class="card">
                 <a href="{{school.link}}" class="card-link" title="View school">
                     <img class=" c-card-head card-img-top" src="{{ school.featured_image|resize(300, 200)}}" width="100%" alt="Card image cap">
@@ -140,5 +146,5 @@
             </div>
         </div>
         {% endfor %}
-    </div> #}
+    </div> 
 </div>

@@ -15,11 +15,12 @@
         padding: 1rem;
         font-size: 14px;
         text-transform: uppercase;
-         a:hover {
+         
+    }
+    a:hover {
                 color: #b8071f;
                 text-decoration: none;
             }
-    }
     .menu-item-has-children{
         position: relative;
         & > a{
@@ -65,9 +66,13 @@
             @extend .btn-danger;
             @extend .btn-sm;
             color: white;
+            padding-left: 40px;
+            padding-right: 40px;
+            background-color: #cf142b;
+            font-size: 12px;
 
             &:hover{
-                color: white;
+                background-color: white;
             }
         }
     }

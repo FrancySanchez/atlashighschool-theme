@@ -164,8 +164,8 @@
         },
         {
             "key": "field_5807c743c517c",
-            "label": "Range Price",
-            "name": "range_price",
+            "label": "Price Range",
+            "name": "price_range",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -312,5 +312,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1477304379
+    "modified": 1477931112
 }

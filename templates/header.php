@@ -34,7 +34,7 @@
             <div class="c-header__logo">
                 <a href="<?= esc_url(home_url('/')); ?>" class="brand" title="<?php echo get_bloginfo( 'name' ) ?>" >
                                     
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/Atlashigh-Logo.png" alt="Logo of <?php bloginfo('name') ?>" width="200">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/LOGO.png" alt="Logo of <?php bloginfo('name') ?>" width="150">
                 </a>
             </div>
             <!-- /logo -->
