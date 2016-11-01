@@ -1,7 +1,7 @@
 (function($) {
 
 
-	$(document).ready(function(){
+	$(window ).load(function(){
 
 		// vars
 		// Initializing the grid
